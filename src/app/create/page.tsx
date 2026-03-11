@@ -29,6 +29,8 @@ export default function CreatePage() {
     max_collaborators: 4,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [posting, setPosting] = useState(false);
+  const [postError, setPostError] = useState("");
 
   const toggleSkill = (skill: string) => {
     setForm((f) => ({
@@ -274,6 +276,13 @@ export default function CreatePage() {
           </div>
         )}
 
+        {/* Error message */}
+        {postError && (
+          <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-card text-sm text-red-700">
+            {postError}
+          </div>
+        )}
+
         {/* Navigation buttons */}
         <div className="flex items-center justify-between mt-8">
           {step > 1 ? (
@@ -299,11 +308,38 @@ export default function CreatePage() {
             </button>
           ) : (
             <button
-              onClick={() => setSubmitted(true)}
-              className="btn-primary"
+              onClick={async () => {
+                setPosting(true);
+                setPostError("");
+                try {
+                  const res = await fetch("/api/projects", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      title: form.title,
+                      problem: form.problem,
+                      description: form.description,
+                      skills: form.skills,
+                      disciplines: form.disciplines,
+                      time_commitment: form.time_commitment,
+                    }),
+                  });
+                  if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.error || "Something went wrong");
+                  }
+                  setSubmitted(true);
+                } catch (err: any) {
+                  setPostError(err.message);
+                } finally {
+                  setPosting(false);
+                }
+              }}
+              disabled={posting}
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Rocket size={16} />
-              Post Project
+              {posting ? "Posting…" : "Post Project"}
             </button>
           )}
         </div>

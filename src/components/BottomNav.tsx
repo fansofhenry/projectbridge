@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Plus, LayoutDashboard, Megaphone, User } from "lucide-react";
+import { Compass, Plus, LayoutDashboard, Megaphone, Sparkles } from "lucide-react";
 import { clsx } from "clsx";
 
 const tabs = [
   { href: "/projects", label: "Explore", icon: Compass },
-  { href: "/wanted", label: "Wanted", icon: Megaphone },
+  { href: "/match", label: "Match", icon: Sparkles },
   { href: "/create", label: "Create", icon: Plus, isCreate: true },
-  { href: "/", label: "Feed", icon: LayoutDashboard },
-  { href: "/profile", label: "Profile", icon: User },
+  { href: "/wanted", label: "Wanted", icon: Megaphone },
+  { href: "/profile", label: "Profile", icon: LayoutDashboard },
 ];
 
 export default function BottomNav() {

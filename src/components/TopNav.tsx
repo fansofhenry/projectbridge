@@ -21,14 +21,14 @@ export default function TopNav() {
         <Link href="/projects" className="text-sm font-medium text-slate hover:text-amber-500 transition-colors no-underline">
           Explore
         </Link>
+        <Link href="/match" className="text-sm font-medium text-slate hover:text-amber-500 transition-colors no-underline">
+          Match Quiz
+        </Link>
         <Link href="/wanted" className="text-sm font-medium text-slate hover:text-amber-500 transition-colors no-underline">
           Wanted Ads
         </Link>
         <Link href="/create" className="text-sm font-medium text-slate hover:text-amber-500 transition-colors no-underline">
           Post a Project
-        </Link>
-        <Link href="/profile" className="text-sm font-medium text-slate hover:text-amber-500 transition-colors no-underline">
-          Profile
         </Link>
       </div>
 

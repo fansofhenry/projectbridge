@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Search, Plus, ArrowRight } from "lucide-react";
+import { Search, Plus, ArrowRight, Sparkles } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import WantedCard from "@/components/WantedCard";
+import Reveal from "@/components/Reveal";
 import { sampleProjects, sampleWantedAds } from "@/lib/sample-data";
 
 export default function Home() {
@@ -37,6 +38,10 @@ export default function Home() {
               <Search size={18} />
               Browse Projects
             </Link>
+            <Link href="/match" className="btn-secondary">
+              <Sparkles size={18} />
+              Match Quiz
+            </Link>
             <Link href="/create" className="btn-secondary">
               <Plus size={18} />
               Post Your Idea
@@ -61,11 +66,13 @@ export default function Home() {
       {/* ═══════ LIVE FEED ═══════ */}
       <section className="px-5 md:px-10 py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
-          <p className="section-label">What&rsquo;s happening now</p>
-          <h2 className="section-title">Projects on campus</h2>
-          <p className="section-desc">
-            Real projects, real students, right now. Jump in or start your own.
-          </p>
+          <Reveal>
+            <p className="section-label">What&rsquo;s happening now</p>
+            <h2 className="section-title">Projects on campus</h2>
+            <p className="section-desc">
+              Real projects, real students, right now. Jump in or start your own.
+            </p>
+          </Reveal>
 
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {sampleProjects.slice(0, 3).map((project) => (
@@ -93,11 +100,13 @@ export default function Home() {
       {/* ═══════ HOW IT WORKS ═══════ */}
       <section className="px-5 md:px-10 py-12 md:py-16 bg-white">
         <div className="max-w-5xl mx-auto">
-          <p className="section-label">How it works</p>
-          <h2 className="section-title">Three moves. Zero friction.</h2>
-          <p className="section-desc">
-            Whether you&rsquo;re starting fresh or looking to join something in motion.
-          </p>
+          <Reveal>
+            <p className="section-label">How it works</p>
+            <h2 className="section-title">Three moves. Zero friction.</h2>
+            <p className="section-desc">
+              Whether you&rsquo;re starting fresh or looking to join something in motion.
+            </p>
+          </Reveal>
 
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-3">
             {[
@@ -139,12 +148,14 @@ export default function Home() {
       {/* ═══════ DISCIPLINES ═══════ */}
       <section className="px-5 md:px-10 py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
-          <p className="section-label">All disciplines welcome</p>
-          <h2 className="section-title">The best projects cross boundaries.</h2>
-          <p className="section-desc">
-            CS meets biology meets design meets social justice. That&rsquo;s where the
-            magic happens.
-          </p>
+          <Reveal>
+            <p className="section-label">All disciplines welcome</p>
+            <h2 className="section-title">The best projects cross boundaries.</h2>
+            <p className="section-desc">
+              CS meets biology meets design meets social justice. That&rsquo;s where the
+              magic happens.
+            </p>
+          </Reveal>
 
           <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
             {[
@@ -172,12 +183,14 @@ export default function Home() {
       {/* ═══════ BARRIERS (RESEARCH) ═══════ */}
       <section className="px-5 md:px-10 py-12 md:py-16 bg-white">
         <div className="max-w-5xl mx-auto">
-          <p className="section-label">What the research found</p>
-          <h2 className="section-title">Four real barriers. One bridge.</h2>
-          <p className="section-desc">
-            Student interviews across MESA, Puente, and Umoja revealed a
-            consistent pattern.
-          </p>
+          <Reveal>
+            <p className="section-label">What the research found</p>
+            <h2 className="section-title">Four real barriers. One bridge.</h2>
+            <p className="section-desc">
+              Student interviews across MESA, Puente, and Umoja revealed a
+              consistent pattern.
+            </p>
+          </Reveal>
 
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
             {[
@@ -226,35 +239,43 @@ export default function Home() {
       {/* ═══════ COMMUNITY RESOURCES ═══════ */}
       <section className="px-5 md:px-10 py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
-          <p className="section-label">Campus resources</p>
-          <h2 className="section-title">Everything in one place.</h2>
-          <p className="section-desc">
-            One of the biggest barriers is not knowing what already exists.
-          </p>
+          <Reveal>
+            <p className="section-label">Campus resources</p>
+            <h2 className="section-title">Everything in one place.</h2>
+            <p className="section-desc">
+              One of the biggest barriers is not knowing what already exists.
+            </p>
+          </Reveal>
 
           <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { emoji: "🔬", name: "Science Learning Institute (SLI)", desc: "Spring internship program — competitive, limited spots." },
-              { emoji: "🚀", name: "ETI", desc: "2–3 year hands-on learning program for entrepreneurial students." },
-              { emoji: "💡", name: "KCI Innovation Challenge", desc: "Campus innovation competition for teams that want structured goals." },
-              { emoji: "🌱", name: "MESA", desc: "Math, Engineering, Science Achievement — supports first-gen STEM students." },
-              { emoji: "🌍", name: "Puente & Umoja", desc: "Learning communities supporting Latinx and African American students." },
-              { emoji: "🤝", name: "Enactus", desc: "Student org using entrepreneurial action to make social impact." },
+              { emoji: "🔬", name: "Science Learning Institute (SLI)", desc: "Spring internship program — competitive, limited spots.", url: "https://foothill.edu/sli/" },
+              { emoji: "🚀", name: "ETI", desc: "2–3 year hands-on learning program for entrepreneurial students.", url: "https://foothill.edu/eti/" },
+              { emoji: "💡", name: "KCI Innovation Challenge", desc: "Campus innovation competition for teams that want structured goals.", url: "https://foothill.edu/kci/" },
+              { emoji: "🌱", name: "MESA", desc: "Math, Engineering, Science Achievement — supports first-gen STEM students.", url: "https://foothill.edu/mesa/" },
+              { emoji: "🌍", name: "Puente & Umoja", desc: "Learning communities supporting Latinx and African American students.", url: "https://foothill.edu/puente/" },
+              { emoji: "🤝", name: "Enactus", desc: "Student org using entrepreneurial action to make social impact.", url: "https://www.enactus.org/" },
             ].map((r) => (
-              <div
+              <a
                 key={r.name}
-                className="bg-white border border-cloud rounded-card p-5 flex gap-3.5 items-start transition-all duration-200 hover:border-teal-500 hover:-translate-y-0.5 hover:shadow-card"
+                href={r.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white border border-cloud rounded-card p-5 flex gap-3.5 items-start transition-all duration-200 hover:border-teal-500 hover:-translate-y-0.5 hover:shadow-card no-underline"
               >
                 <div className="w-10 h-10 rounded-[10px] bg-teal-50 flex items-center justify-center text-xl shrink-0">
                   {r.emoji}
                 </div>
                 <div>
-                  <h3 className="text-[15px] font-semibold mb-1">{r.name}</h3>
+                  <h3 className="text-[15px] font-semibold mb-1 text-ink">{r.name}</h3>
                   <p className="text-[13px] text-slate leading-snug">
                     {r.desc}
                   </p>
+                  <span className="text-xs font-semibold text-teal-500 mt-1.5 inline-block">
+                    Learn more →
+                  </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -313,6 +334,7 @@ export default function Home() {
             </h4>
             <div className="space-y-2">
               <Link href="/projects" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Browse Projects</Link>
+              <Link href="/match" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Match Quiz</Link>
               <Link href="/wanted" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Wanted Ads</Link>
               <Link href="/create" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Post a Project</Link>
               <Link href="/profile" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Your Profile</Link>
@@ -326,10 +348,10 @@ export default function Home() {
             </h4>
             <div className="space-y-2">
               <a href="https://foothill.edu/sli/" target="_blank" rel="noopener" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">SLI</a>
-              <a href="#" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">MESA</a>
-              <a href="#" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Umoja</a>
-              <a href="#" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Puente</a>
-              <a href="#" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">ETI</a>
+              <a href="https://foothill.edu/mesa/" target="_blank" rel="noopener" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">MESA</a>
+              <a href="https://foothill.edu/umoja/" target="_blank" rel="noopener" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Umoja</a>
+              <a href="https://foothill.edu/puente/" target="_blank" rel="noopener" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Puente</a>
+              <a href="https://foothill.edu/eti/" target="_blank" rel="noopener" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">ETI</a>
             </div>
           </div>
         </div>

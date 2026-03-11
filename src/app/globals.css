@@ -52,4 +52,9 @@
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 8px);
   }
+
+  .revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }
