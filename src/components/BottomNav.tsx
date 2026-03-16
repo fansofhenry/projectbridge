@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Plus, LayoutDashboard, Megaphone, Sparkles } from "lucide-react";
+import { Compass, Plus, Megaphone, Sparkles, Heart } from "lucide-react";
 import { clsx } from "clsx";
 
 const tabs = [
@@ -10,7 +10,7 @@ const tabs = [
   { href: "/match", label: "Match", icon: Sparkles },
   { href: "/create", label: "Create", icon: Plus, isCreate: true },
   { href: "/wanted", label: "Wanted", icon: Megaphone },
-  { href: "/profile", label: "Profile", icon: LayoutDashboard },
+  { href: "/support", label: "Support", icon: Heart },
 ];
 
 export default function BottomNav() {
@@ -35,6 +35,27 @@ export default function BottomNav() {
               <span className="text-[10px] font-medium text-amber-500 mt-0.5">
                 {tab.label}
               </span>
+            </Link>
+          );
+        }
+
+        // Support tab — amber heart treatment
+        if (tab.href === "/support") {
+          return (
+            <Link
+              key={tab.href}
+              href={tab.href}
+              className={clsx(
+                "flex flex-col items-center no-underline py-1 min-w-[56px]",
+                isActive ? "text-amber-500" : "text-slate"
+              )}
+            >
+              <Icon
+                size={22}
+                strokeWidth={isActive ? 2.5 : 2}
+                className={isActive ? "fill-amber-500 text-amber-500" : ""}
+              />
+              <span className="text-[10px] font-medium mt-0.5">{tab.label}</span>
             </Link>
           );
         }
