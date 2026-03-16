@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, Plus, ArrowRight, Sparkles } from "lucide-react";
+import { Search, Plus, ArrowRight, Sparkles, Heart } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import WantedCard from "@/components/WantedCard";
 import Reveal from "@/components/Reveal";
@@ -281,6 +281,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══════ SUPPORT BANNER ═══════ */}
+      <section className="px-5 md:px-10 py-10 bg-gradient-to-r from-amber-50 to-teal-50 border-y border-cloud">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center shrink-0">
+              <Heart size={22} className="text-white fill-white" />
+            </div>
+            <div>
+              <h3 className="font-display font-bold text-lg tracking-tight mb-0.5">Help us keep the bridge open.</h3>
+              <p className="text-sm text-slate">ProjectBridge is free for all students — sustained by community support.</p>
+            </div>
+          </div>
+          <Link href="/support" className="btn-primary shrink-0">
+            <Heart size={16} className="fill-white" />
+            Support Us
+          </Link>
+        </div>
+      </section>
+
       {/* ═══════ CTA ═══════ */}
       <section className="px-5 md:px-10 py-8">
         <div className="max-w-5xl mx-auto bg-gradient-to-br from-ink to-[#2A2A4A] rounded-card p-10 md:p-16 text-center relative overflow-hidden">
@@ -338,6 +357,7 @@ export default function Home() {
               <Link href="/wanted" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Wanted Ads</Link>
               <Link href="/create" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Post a Project</Link>
               <Link href="/profile" className="block text-sm text-ink no-underline hover:text-amber-500 transition-colors">Your Profile</Link>
+              <Link href="/support" className="block text-sm font-semibold text-amber-600 no-underline hover:text-amber-700 transition-colors">♥ Support Us</Link>
             </div>
           </div>
 
