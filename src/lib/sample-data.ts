@@ -21,6 +21,8 @@ export const sampleProjects: Project[] = [
     featured: true,
     last_activity_at: "2026-03-06T18:30:00Z",
     created_at: "2026-01-15T10:00:00Z",
+    event_origin: "KCI Innovation Challenge",
+    event_placed: false,
     members: [
       { id: "m1", project_id: "1", user_id: "u1", role: "lead", joined_at: "2026-01-15T10:00:00Z", user: { id: "u1", email: "maria@student.fhda.edu", display_name: "Maria R.", avatar_url: null, bio: "", skills: ["Python", "Pandas"], disciplines: ["CS"], program_affiliation: ["MESA"], availability_hrs_week: 5, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
       { id: "m2", project_id: "1", user_id: "u2", role: "contributor", joined_at: "2026-01-20T10:00:00Z", user: { id: "u2", email: "jose@student.fhda.edu", display_name: "José L.", avatar_url: null, bio: "", skills: ["JavaScript", "React"], disciplines: ["CS"], program_affiliation: [], availability_hrs_week: 3, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
@@ -53,6 +55,8 @@ export const sampleProjects: Project[] = [
     featured: false,
     last_activity_at: "2026-03-04T14:00:00Z",
     created_at: "2026-02-10T09:00:00Z",
+    event_origin: "RSLS Research Program",
+    event_placed: false,
     members: [
       { id: "m4", project_id: "2", user_id: "u4", role: "lead", joined_at: "2026-02-10T09:00:00Z", user: { id: "u4", email: "sam@student.fhda.edu", display_name: "Sam T.", avatar_url: null, bio: "", skills: ["Biology", "Writing"], disciplines: ["Science"], program_affiliation: ["SLI"], availability_hrs_week: 3, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
       { id: "m5", project_id: "2", user_id: "u5", role: "contributor", joined_at: "2026-02-15T09:00:00Z", user: { id: "u5", email: "alex@student.fhda.edu", display_name: "Alex P.", avatar_url: null, bio: "", skills: ["After Effects", "Illustration"], disciplines: ["Art & Design"], program_affiliation: [], availability_hrs_week: 2, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
@@ -119,7 +123,7 @@ export const sampleProjects: Project[] = [
     title: "First-Gen Resume Builder",
     slug: "first-gen-resume-builder",
     description:
-      "A tool that helps first-generation college students translate campus experience—clubs, projects, volunteering—into professional resume language.",
+      "A tool that helps first-generation college students translate campus experience — clubs, projects, volunteering — into professional resume language.",
     problem_statement:
       "First-gen students often undersell their experience because they don't know how to frame it professionally.",
     status: "in_progress",
@@ -134,6 +138,8 @@ export const sampleProjects: Project[] = [
     featured: true,
     last_activity_at: "2026-03-07T09:00:00Z",
     created_at: "2026-01-20T14:00:00Z",
+    event_origin: "Startup Club Pitch Night",
+    event_placed: false,
     members: [
       { id: "m8", project_id: "5", user_id: "u8", role: "lead", joined_at: "2026-01-20T14:00:00Z", user: { id: "u8", email: "priya@student.fhda.edu", display_name: "Priya M.", avatar_url: null, bio: "", skills: ["React", "TypeScript"], disciplines: ["CS", "Business"], program_affiliation: ["Puente"], availability_hrs_week: 4, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
       { id: "m9", project_id: "5", user_id: "u9", role: "contributor", joined_at: "2026-02-01T14:00:00Z", user: { id: "u9", email: "cris@student.fhda.edu", display_name: "Cris V.", avatar_url: null, bio: "", skills: ["UX Design", "User Research"], disciplines: ["Art & Design"], program_affiliation: [], availability_hrs_week: 3, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
@@ -141,6 +147,96 @@ export const sampleProjects: Project[] = [
     milestones: [
       { id: "ms8", project_id: "5", title: "MVP with 3 templates", description: "Build basic resume builder with 3 templates", target_date: "2026-02-15", completed_at: "2026-02-18T00:00:00Z", status: "completed", order: 1 },
       { id: "ms9", project_id: "5", title: "AI phrase suggestions", description: "Integrate AI to suggest professional phrasing", target_date: "2026-03-15", completed_at: null, status: "in_progress", order: 2 },
+    ],
+  },
+  // ── Event-origin projects ──────────────────────────────
+  {
+    id: "6",
+    title: "Peer Mental Health Check-In App",
+    slug: "peer-mental-health-checkin",
+    description:
+      "An anonymous, low-barrier daily check-in app that connects struggling students to peer support volunteers. Started as a case at Google Case Competition — we didn't place but we're not done.",
+    problem_statement:
+      "Students in crisis don't reach out because formal counseling feels intimidating. Peer support at scale is the gap.",
+    status: "recruiting",
+    disciplines: ["Computer Science", "Social Justice", "Communication"],
+    skills_needed: ["React", "Mobile Development", "UX Research"],
+    time_commitment: "steady",
+    max_collaborators: 5,
+    owner_id: "u10",
+    program_id: null,
+    course_id: null,
+    quarter: "Spring 2026",
+    featured: false,
+    last_activity_at: "2026-03-10T10:00:00Z",
+    created_at: "2026-03-01T10:00:00Z",
+    event_origin: "Google Case Competition",
+    event_placed: false,
+    members: [
+      { id: "m10", project_id: "6", user_id: "u10", role: "lead", joined_at: "2026-03-01T10:00:00Z", user: { id: "u10", email: "dana@student.fhda.edu", display_name: "Dana W.", avatar_url: null, bio: "", skills: ["React", "Node.js"], disciplines: ["CS", "Social Justice"], program_affiliation: ["MESA"], availability_hrs_week: 5, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
+      { id: "m11", project_id: "6", user_id: "u11", role: "contributor", joined_at: "2026-03-02T10:00:00Z", user: { id: "u11", email: "teo@student.fhda.edu", display_name: "Teo A.", avatar_url: null, bio: "", skills: ["UX Research", "Figma"], disciplines: ["Art & Design"], program_affiliation: [], availability_hrs_week: 3, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
+    ],
+    milestones: [
+      { id: "ms10", project_id: "6", title: "Problem validation interviews", description: "Interview 15 students about mental health help-seeking barriers", target_date: "2026-03-20", completed_at: null, status: "in_progress", order: 1 },
+      { id: "ms11", project_id: "6", title: "Lo-fi prototype", description: "Design core check-in and match flows", target_date: "2026-04-05", completed_at: null, status: "upcoming", order: 2 },
+    ],
+  },
+  {
+    id: "7",
+    title: "Micro-Scholarship Matching Platform",
+    slug: "micro-scholarship-platform",
+    description:
+      "A platform connecting local businesses with community college students for micro-scholarships tied to specific skills or projects. Came out of an Enactus social impact sprint.",
+    problem_statement:
+      "Thousands of small scholarships go unclaimed each year because students don't know they exist. We want to fix the discovery problem.",
+    status: "idea",
+    disciplines: ["Business", "Computer Science", "Social Justice"],
+    skills_needed: ["Next.js", "Business Development", "Copywriting"],
+    time_commitment: "steady",
+    max_collaborators: 4,
+    owner_id: "u12",
+    program_id: null,
+    course_id: null,
+    quarter: "Spring 2026",
+    featured: false,
+    last_activity_at: "2026-03-05T15:00:00Z",
+    created_at: "2026-03-05T15:00:00Z",
+    event_origin: "Enactus Social Innovation",
+    event_placed: false,
+    members: [
+      { id: "m12", project_id: "7", user_id: "u12", role: "lead", joined_at: "2026-03-05T15:00:00Z", user: { id: "u12", email: "lin@student.fhda.edu", display_name: "Lin C.", avatar_url: null, bio: "", skills: ["Business", "Research"], disciplines: ["Business"], program_affiliation: ["Enactus"], availability_hrs_week: 4, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
+    ],
+    milestones: [],
+  },
+  {
+    id: "8",
+    title: "Campus Emergency Preparedness Guide",
+    slug: "campus-emergency-prep",
+    description:
+      "An interactive, multilingual emergency preparedness resource built specifically for Foothill students — covering earthquakes, wildfires, and campus-specific protocols.",
+    problem_statement:
+      "International and first-gen students are least likely to know emergency procedures. Existing guides are PDFs written for administrators, not students.",
+    status: "recruiting",
+    disciplines: ["Social Justice", "Communication", "Computer Science"],
+    skills_needed: ["Translation", "Web Development", "Graphic Design"],
+    time_commitment: "light",
+    max_collaborators: 6,
+    owner_id: "u13",
+    program_id: null,
+    course_id: null,
+    quarter: "Spring 2026",
+    featured: false,
+    last_activity_at: "2026-03-08T13:00:00Z",
+    created_at: "2026-02-28T13:00:00Z",
+    event_origin: "KCI Innovation Challenge",
+    event_placed: true,
+    members: [
+      { id: "m13", project_id: "8", user_id: "u13", role: "lead", joined_at: "2026-02-28T13:00:00Z", user: { id: "u13", email: "yuki@student.fhda.edu", display_name: "Yuki S.", avatar_url: null, bio: "", skills: ["HTML", "CSS", "Japanese"], disciplines: ["CS", "Communication"], program_affiliation: [], availability_hrs_week: 4, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
+      { id: "m14", project_id: "8", user_id: "u14", role: "contributor", joined_at: "2026-03-01T13:00:00Z", user: { id: "u14", email: "fatima@student.fhda.edu", display_name: "Fatima O.", avatar_url: null, bio: "", skills: ["Arabic", "Graphic Design"], disciplines: ["Art & Design"], program_affiliation: ["MESA"], availability_hrs_week: 3, role: "student", profile_visibility: true, created_at: "", last_active_at: "" } },
+    ],
+    milestones: [
+      { id: "ms12", project_id: "8", title: "English content complete", description: "Write all core emergency protocol content", target_date: "2026-03-25", completed_at: null, status: "in_progress", order: 1 },
+      { id: "ms13", project_id: "8", title: "Spanish + Mandarin translation", description: "Translate full guide into Spanish and Mandarin", target_date: "2026-04-10", completed_at: null, status: "upcoming", order: 2 },
     ],
   },
 ];
@@ -159,6 +255,7 @@ export const sampleWantedAds: WantedAd[] = [
     status: "open",
     expires_at: "2026-04-15",
     created_at: "2026-03-01T10:00:00Z",
+    ad_type: "skill_request",
   },
   {
     id: "w2",
@@ -173,6 +270,7 @@ export const sampleWantedAds: WantedAd[] = [
     status: "open",
     expires_at: "2026-04-01",
     created_at: "2026-03-03T14:00:00Z",
+    ad_type: "skill_request",
   },
   {
     id: "w3",
@@ -187,6 +285,7 @@ export const sampleWantedAds: WantedAd[] = [
     status: "open",
     expires_at: "2026-04-20",
     created_at: "2026-03-05T11:00:00Z",
+    ad_type: "skill_request",
   },
   {
     id: "w4",
@@ -201,6 +300,75 @@ export const sampleWantedAds: WantedAd[] = [
     status: "open",
     expires_at: "2026-05-01",
     created_at: "2026-03-06T16:00:00Z",
+    ad_type: "skill_request",
+  },
+  // ── Solo seekers ─────────────────────────────────────────
+  {
+    id: "w5",
+    poster_id: "u15",
+    project_id: null,
+    title: "Looking for a team — Innovation Challenge, Spring 2026",
+    description:
+      "I'm a business student with a solid idea around affordable student housing tools but I'm going in solo. Looking for 1-2 people (ideally a developer and a designer) to form a team before the event.",
+    skills_requested: ["Web Development", "UI/UX Design"],
+    time_commitment: "light",
+    compensation: null,
+    status: "open",
+    expires_at: "2026-04-10",
+    created_at: "2026-03-08T09:00:00Z",
+    ad_type: "solo_seeker",
+    event_name: "KCI Innovation Challenge",
+    event_date: "April 18, 2026",
+  },
+  {
+    id: "w6",
+    poster_id: "u16",
+    project_id: null,
+    title: "Solo at Google Case Comp — want teammates",
+    description:
+      "CS student, strong with data and Python. Signed up for Google Case Comp but my group fell through. Excited to work on any case — just need people who are equally serious about it.",
+    skills_requested: ["Business Strategy", "Presentation", "Marketing"],
+    time_commitment: "light",
+    compensation: null,
+    status: "open",
+    expires_at: "2026-04-05",
+    created_at: "2026-03-09T12:00:00Z",
+    ad_type: "solo_seeker",
+    event_name: "Google Case Competition",
+    event_date: "April 26, 2026",
+  },
+  // ── Event continuation ────────────────────────────────────
+  {
+    id: "w7",
+    poster_id: "u10",
+    project_id: "6",
+    title: "Continuing our Mental Health App after Case Comp",
+    description:
+      "Our Google Case Comp team didn't place but we believe in the idea. We're rebuilding as a real product and need a mobile dev to join. The core 2 of us are staying committed.",
+    skills_requested: ["React Native", "Mobile Development"],
+    time_commitment: "steady",
+    compensation: "volunteer",
+    status: "open",
+    expires_at: "2026-05-01",
+    created_at: "2026-03-10T10:00:00Z",
+    ad_type: "event_continuation",
+    event_name: "Google Case Competition",
+  },
+  {
+    id: "w8",
+    poster_id: "u12",
+    project_id: "7",
+    title: "Enactus sprint team keeping the momentum",
+    description:
+      "We built a micro-scholarship concept at Enactus and want to keep going. Looking for someone who can help us validate the business model and potentially build a simple MVP.",
+    skills_requested: ["Business Development", "Next.js"],
+    time_commitment: "light",
+    compensation: "volunteer",
+    status: "open",
+    expires_at: "2026-04-30",
+    created_at: "2026-03-07T15:00:00Z",
+    ad_type: "event_continuation",
+    event_name: "Enactus Social Innovation",
   },
 ];
 
@@ -226,3 +394,5 @@ export function statusConfig(status: string) {
     default: return { label: status, bg: "bg-gray-100", text: "text-gray-600" };
   }
 }
+
+export const eventOriginProjects = sampleProjects.filter((p) => p.event_origin);

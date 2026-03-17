@@ -22,6 +22,13 @@ export type WantedAdStatus = "open" | "filled" | "closed";
 
 export type MemberRole = "lead" | "contributor" | "advisor";
 
+/**
+ * solo_seeker  — "I'm going to [event] alone, looking for a team before it starts"
+ * skill_request — standard "I need someone with X skill for my project"
+ * event_continuation — "Our [event] team wants to keep going, need more people"
+ */
+export type WantedAdType = "skill_request" | "solo_seeker" | "event_continuation";
+
 // ─── Models ──────────────────────────────────────────────
 
 export interface User {
@@ -58,6 +65,10 @@ export interface Project {
   featured: boolean;
   last_activity_at: string;
   created_at: string;
+  /** Name of the campus event this project originated from, if any */
+  event_origin?: string;
+  /** Whether the team placed in the competition (top 3) */
+  event_placed?: boolean;
   // Joined fields
   owner?: User;
   members?: ProjectMember[];
@@ -122,5 +133,28 @@ export interface WantedAd {
   status: WantedAdStatus;
   expires_at: string;
   created_at: string;
+  /** The type of ad — skill request, solo event seeker, or event continuation */
+  ad_type?: WantedAdType;
+  /** Event name for solo_seeker and event_continuation ads */
+  event_name?: string;
+  /** Date of the upcoming event for solo_seeker ads */
+  event_date?: string;
   poster?: User;
+}
+
+// ─── Campus Events ────────────────────────────────────────
+
+export interface CampusEvent {
+  id: string;
+  name: string;
+  short_name: string;
+  description: string;
+  organizer: string;
+  url?: string;
+  upcoming_date?: string;
+  frequency: string;
+  disciplines: string[];
+  emoji: string;
+  color: string; // tailwind bg class
+  accent: string; // tailwind text class
 }

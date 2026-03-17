@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Plus, Megaphone, Sparkles, Heart } from "lucide-react";
+import { Compass, Plus, Megaphone, Sparkles, CalendarDays } from "lucide-react";
 import { clsx } from "clsx";
 
 const tabs = [
   { href: "/projects", label: "Explore", icon: Compass },
-  { href: "/match", label: "Match", icon: Sparkles },
+  { href: "/events", label: "Events", icon: CalendarDays },
   { href: "/create", label: "Create", icon: Plus, isCreate: true },
   { href: "/wanted", label: "Wanted", icon: Megaphone },
-  { href: "/support", label: "Support", icon: Heart },
+  { href: "/match", label: "Match", icon: Sparkles },
 ];
 
 export default function BottomNav() {
@@ -39,33 +39,12 @@ export default function BottomNav() {
           );
         }
 
-        // Support tab — amber heart treatment
-        if (tab.href === "/support") {
-          return (
-            <Link
-              key={tab.href}
-              href={tab.href}
-              className={clsx(
-                "flex flex-col items-center no-underline py-1 min-w-[56px]",
-                isActive ? "text-amber-500" : "text-slate"
-              )}
-            >
-              <Icon
-                size={22}
-                strokeWidth={isActive ? 2.5 : 2}
-                className={isActive ? "fill-amber-500 text-amber-500" : ""}
-              />
-              <span className="text-[10px] font-medium mt-0.5">{tab.label}</span>
-            </Link>
-          );
-        }
-
         return (
           <Link
             key={tab.href}
             href={tab.href}
             className={clsx(
-              "flex flex-col items-center no-underline py-1 min-w-[56px]",
+              "flex flex-col items-center no-underline py-1 min-w-[52px]",
               isActive ? "text-amber-500" : "text-slate"
             )}
           >

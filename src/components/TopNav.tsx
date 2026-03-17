@@ -6,6 +6,7 @@ import { Search, Heart, Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/projects", label: "Explore" },
+  { href: "/events", label: "Events" },
   { href: "/match", label: "Match Quiz" },
   { href: "/wanted", label: "Wanted Ads" },
   { href: "/create", label: "Post a Project" },
@@ -28,7 +29,7 @@ export default function TopNav() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((l) => (
             <Link
               key={l.href}

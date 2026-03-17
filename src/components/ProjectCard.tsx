@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Clock } from "lucide-react";
+import { Clock, Trophy } from "lucide-react";
 import { Project } from "@/lib/types";
 import { statusConfig, timeLabel } from "@/lib/sample-data";
 
@@ -35,6 +35,17 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       {/* Top accent bar on hover */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+      {/* Event origin badge */}
+      {project.event_origin && (
+        <div className="flex items-center gap-1 mb-2.5">
+          <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide bg-amber-50 border border-amber-200 text-amber-700 px-2 py-0.5 rounded-full">
+            {project.event_placed && <Trophy size={9} className="shrink-0" />}
+            {project.event_placed ? "🏆 " : ""}
+            {project.event_origin}
+          </span>
+        </div>
+      )}
 
       {/* Header */}
       <div className="flex items-start justify-between mb-3">

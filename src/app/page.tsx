@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, Plus, ArrowRight, Sparkles, Heart } from "lucide-react";
+import { Search, Plus, ArrowRight, Sparkles, Heart, Zap } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import WantedCard from "@/components/WantedCard";
 import Reveal from "@/components/Reveal";
@@ -141,6 +141,50 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════ FROM CAMPUS EVENTS ═══════ */}
+      <section className="px-5 md:px-10 py-12 md:py-16 bg-gradient-to-r from-purple-50/50 via-white to-amber-50/50 border-y border-cloud">
+        <div className="max-w-5xl mx-auto">
+          <Reveal>
+            <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
+              <div>
+                <p className="section-label flex items-center gap-1.5">
+                  <Zap size={13} className="text-amber-500" />
+                  Competition & event projects
+                </p>
+                <h2 className="section-title mb-1">These teams didn&rsquo;t stop.</h2>
+                <p className="text-sm text-slate max-w-lg">
+                  Projects born at Google Case, Innovation Challenge, Enactus, and more — continuing on ProjectBridge.
+                </p>
+              </div>
+              <Link href="/events" className="btn-secondary shrink-0">
+                All Events <ArrowRight size={15} />
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-5">
+            {sampleProjects.filter((p) => p.event_origin).slice(0, 3).map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+
+          {/* Solo seeker callout */}
+          <div className="bg-purple-50 border border-purple-200 rounded-card px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5">
+              <span className="text-xl">🙋</span>
+              <div>
+                <p className="text-sm font-semibold text-ink">Going to an event solo?</p>
+                <p className="text-xs text-slate">Find teammates before the event starts — or join someone else&rsquo;s team.</p>
+              </div>
+            </div>
+            <Link href="/events#solo" className="btn-primary shrink-0 !py-2 !px-4 !text-sm">
+              Find Teammates
+            </Link>
           </div>
         </div>
       </section>
